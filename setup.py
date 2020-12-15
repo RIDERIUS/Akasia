@@ -35,7 +35,7 @@ setup(
     install_requires=[
         'beautifulsoup4==4.9.3',
         'certifi==2020.12.5',
-        'chardet==3.0.4',
+        'chardet==4.0.0',
         'html2text==2020.1.16',
         'idna==2.10',
         'requests==2.25.0',

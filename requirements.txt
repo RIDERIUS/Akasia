@@ -6,7 +6,7 @@
 #
 beautifulsoup4==4.9.3     # via wikipedia
 certifi==2020.12.5        # via requests
-chardet==3.0.4            # via requests
+chardet==4.0.0            # via requests
 html2text==2020.1.16      # via -r requirements.txt
 idna==2.10                # via requests
 requests==2.25.0          # via -r requirements.txt, wikipedia
