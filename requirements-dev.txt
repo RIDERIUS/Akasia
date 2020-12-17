@@ -24,7 +24,7 @@ pygments==2.7.3           # via sphinx
 pyparsing==2.4.7          # via packaging
 pytz==2020.4              # via babel
 pyyaml==5.3.1             # via sphinx-autoapi
-requests==2.25.0          # via -r requirements-dev.txt, sphinx, wikipedia
+requests==2.25.1          # via -r requirements-dev.txt, sphinx, wikipedia
 six==1.15.0               # via astroid, pockets, sphinxcontrib.napoleon
 snowballstemmer==2.0.0    # via sphinx
 soupsieve==2.1          # via beautifulsoup4
