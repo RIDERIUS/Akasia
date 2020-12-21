@@ -38,7 +38,7 @@ sphinxcontrib-jsmath==1.0.1  # via sphinx
 sphinxcontrib-qthelp==1.0.3  # via sphinx
 sphinxcontrib-serializinghtml==1.1.4  # via sphinx
 sphinxcontrib.napoleon==0.7  # via -r requirements-dev.txt
-unidecode==1.1.1          # via sphinx-autoapi
+unidecode==1.1.2          # via sphinx-autoapi
 urllib3==1.26.2           # via requests
 wikipedia==1.4.0          # via -r requirements-dev.txt
 wrapt==1.12.1             # via astroid
