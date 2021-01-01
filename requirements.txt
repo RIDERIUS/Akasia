@@ -8,7 +8,7 @@ beautifulsoup4==4.9.3     # via wikipedia
 certifi==2020.12.5        # via requests
 chardet==3.0.4            # via requests
 html2text==2020.1.16      # via -r requirements.txt
-idna==2.10                # via requests
+idna==3.0                # via requests
 requests==2.25.0          # via -r requirements.txt, wikipedia
 soupsieve==2.1          # via beautifulsoup4
 urllib3==1.26.2           # via requests

@@ -37,7 +37,7 @@ setup(
         'certifi==2020.12.5',
         'chardet==3.0.4',
         'html2text==2020.1.16',
-        'idna==2.10',
+        'idna==3.0',
         'requests==2.25.0',
         'soupsieve==2.1',
         'urllib3==1.26.2',

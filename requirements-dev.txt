@@ -13,7 +13,7 @@ chardet==3.0.4            # via requests
 colorama==0.4.4           # via sphinx
 docutils==0.16            # via sphinx
 html2text==2020.1.16      # via -r requirements-dev.txt
-idna==2.10                # via requests
+idna==3.0                # via requests
 imagesize==1.2.0          # via sphinx
 jinja2==2.11.2            # via sphinx, sphinx-autoapi
 lazy-object-proxy==1.4.3  # via astroid
