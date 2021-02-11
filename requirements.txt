@@ -11,5 +11,5 @@ html2text==2020.1.16      # via -r requirements.txt
 idna==2.10                # via requests
 requests==2.25.0          # via -r requirements.txt, wikipedia
 soupsieve==2.1          # via beautifulsoup4
-urllib3==1.26.2           # via requests
+urllib3==1.26.3           # via requests
 wikipedia==1.4.0          # via -r requirements.txt

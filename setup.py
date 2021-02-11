@@ -40,7 +40,7 @@ setup(
         'idna==2.10',
         'requests==2.25.0',
         'soupsieve==2.1',
-        'urllib3==1.26.2',
+        'urllib3==1.26.3',
         'wikipedia==1.4.0'
     ]
 )
