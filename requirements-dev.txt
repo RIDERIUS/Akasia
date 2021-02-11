@@ -28,7 +28,7 @@ requests==2.25.0          # via -r requirements-dev.txt, sphinx, wikipedia
 six==1.15.0               # via astroid, pockets, sphinxcontrib.napoleon
 snowballstemmer==2.0.0    # via sphinx
 soupsieve==2.1          # via beautifulsoup4
-sphinx-autoapi==1.5.1     # via -r requirements-dev.txt
+sphinx-autoapi==1.7.0     # via -r requirements-dev.txt
 sphinx-rtd-theme==0.5.0   # via -r requirements-dev.txt
 sphinx==3.3.1             # via sphinx-autoapi, sphinx-rtd-theme
 sphinxcontrib-applehelp==1.0.2  # via sphinx
