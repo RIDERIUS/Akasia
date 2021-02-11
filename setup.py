@@ -39,7 +39,7 @@ setup(
         'html2text==2020.1.16',
         'idna==2.10',
         'requests==2.25.0',
-        'soupsieve==2.1',
+        'soupsieve==2.2',
         'urllib3==1.26.2',
         'wikipedia==1.4.0'
     ]
