@@ -32,7 +32,7 @@ packaging==20.9
     # via sphinx
 pockets==0.9.1
     # via sphinxcontrib.napoleon
-pygments==2.7.4
+pygments==2.8.0
     # via sphinx
 pyparsing==2.4.7
     # via packaging
