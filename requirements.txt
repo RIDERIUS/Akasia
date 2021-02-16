@@ -4,27 +4,27 @@
 #
 #    pip-compile requirements.txt
 #
-beautifulsoup4<=4.9.3
+beautifulsoup4>=4.9.3
     # via wikipedia
-certifi<=2020.12.5
+certifi>=2020.12.5
     # via requests
-chardet<=4.0.0
+chardet>=3.0.2
     # via requests
-dock-python-cli<=0.1.2
+dock-python-cli>=0.1.2
     # via dock-python
-dock-python<=0.1.0
+dock-python>=0.1.0
     # via -r requirements.txt
-html2text<=2020.1.16
+html2text>=2020.1.16
     # via -r requirements.txt
-idna<=2.10
+idna>=2.10
     # via requests
-requests<=2.25.1
+requests>=2.25.1
     # via
     #   -r requirements.txt
     #   wikipedia
-soupsieve<=2.2
+soupsieve>=2.2
     # via beautifulsoup4
-urllib3<=1.26.3
+urllib3>=1.26.3
     # via requests
-wikipedia<=1.4.0
+wikipedia>=1.4.0
     # via -r requirements.txt
