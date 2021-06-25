@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="https://casual-effects.com/markdeep/latest/journal.css?">
-
-## Module `akasia` 
+# Module `akasia` 
 
 This is main module web browser Akasia. 
 - Function [get_request](#Function-akasia.get_request)
@@ -61,6 +60,9 @@ def get_request(url: str) -> str:
             response = requests.get(f'http://{url}')
         else:
             sys.exit()
+    except requests.exceptions.ConnectionError:
+        print(f'Site server "{url}" not found.')
+        sys.exit()
 
     site_content = str(response.content, response.encoding)
     return site_content, response
@@ -174,10 +176,8 @@ def save_site_in_html(site_content: str, path: str) -> None:
         None: The function returns nothing.
 
     """
-
-    file = open(path, 'w')
-    file.write(site_content)
-    file.close()
+    with open(path, "w") as file:
+        file.write(site_content)
 
 ```
 
@@ -227,9 +227,8 @@ def save_site_in_markdown(site_content: str, path: str) -> None:
         None: The function returns nothing.
 
     """
-    file = open(path, 'w')
-    file.write(html2text.html2text(site_content))
-    file.close()
+    with open(path, "w") as file:
+        file.write(html2text.html2text(site_content))
 
 ```
 

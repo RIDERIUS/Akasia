@@ -21,7 +21,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body_path: CHANGELOG.rst
+          body_path: CHANGELOG.md
           draft: true
           prerelease: false
       - name: Set up Python
