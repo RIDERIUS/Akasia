@@ -1,6 +1,12 @@
 Changelog
 =========
 
+Version 1.7.1
+-------------
+
+- Added an exception for not found servers
+- Fixed pylint errors
+
 Version 1.7.0
 -------------
 

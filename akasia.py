@@ -10,7 +10,7 @@ import dock
 from rich.console import Console
 from rich.markdown import Markdown
 
-VERSION = '1.7.0'
+VERSION = '1.7.1'
 console = Console()
 
 # pylint settings:
@@ -42,6 +42,9 @@ def get_request(url: str) -> str:
             response = requests.get(f'http://{url}')
         else:
             sys.exit()
+    except requests.exceptions.ConnectionError:
+        print(f'Site server "{url}" not found.')
+        sys.exit()
 
     site_content = str(response.content, response.encoding)
     return site_content, response
@@ -91,10 +94,8 @@ def save_site_in_html(site_content: str, path: str) -> None:
         None: The function returns nothing.
 
     """
-
-    file = open(path, 'w')
-    file.write(site_content)
-    file.close()
+    with open(path, "w") as file:
+        file.write(site_content)
 
 
 @dock()
@@ -111,9 +112,8 @@ def save_site_in_markdown(site_content: str, path: str) -> None:
         None: The function returns nothing.
 
     """
-    file = open(path, 'w')
-    file.write(html2text.html2text(site_content))
-    file.close()
+    with open(path, "w") as file:
+        file.write(html2text.html2text(site_content))
 
 
 @dock()
