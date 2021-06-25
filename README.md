@@ -45,3 +45,11 @@ If you type **save_markdown** or **smd** to save site in format markdown.
 ## Module reference
 
 [Akasia.py](https://github.com/RIDERIUS/Akasia/blob/main/docs/akasia.md)
+
+## Authors
+| Contributor                                                                                                                         | What has been done    |
+|-------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| <img src="https://avatars.githubusercontent.com/u/2156349?v=4" height=30px align=center> [Robrecht De Rouck](https://github.com/robrechtdr) | Original work  |
+| <img src="https://avatars.githubusercontent.com/u/61966120?v=4" height=30px align=center>   [RIDERIUS](https://github.com/riderius) | Maintaining this fork |
+
+See also the list of [contributors](https://github.com/RIDERIUS/Akasia/blob/main/AUTHORS.md) who participated in this project.
