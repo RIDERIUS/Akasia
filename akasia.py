@@ -3,6 +3,7 @@
 """ This is main module web browser Akasia. """
 
 import sys
+import os
 import requests
 import html2text
 import wikipedia
@@ -10,13 +11,39 @@ import dock
 from rich.console import Console
 from rich.markdown import Markdown
 
-VERSION = '1.7.1'
+VERSION = '1.8.0-snapshot1'
 console = Console()
 
 # pylint settings:
 # pylint: disable=E1101
 # pylint: disable=E1102
+# pylint: disable=C0415
+# pylint: disable=E0401
 
+#msvcrt.getch
+def getkey():
+    ''' Wait for a key press on the console and return it. '''
+    result = None
+    if os.name == 'nt':
+        import msvcrt
+        result = msvcrt.getch()
+    else:
+        import termios
+        file_descriptor = sys.stdin.fileno()
+
+        oldterm = termios.tcgetattr(file_descriptor)
+        newattr = termios.tcgetattr(file_descriptor)
+        newattr[3] = newattr[3] & ~termios.ICANON & ~termios.ECHO
+        termios.tcsetattr(file_descriptor, termios.TCSANOW, newattr)
+
+        try:
+            result = sys.stdin.read(1)
+        except IOError:
+            pass
+        finally:
+            termios.tcsetattr(file_descriptor, termios.TCSAFLUSH, oldterm)
+
+    return result
 
 @dock()
 def get_request(url: str) -> str:
@@ -97,7 +124,6 @@ def save_site_in_html(site_content: str, path: str) -> None:
     with open(path, "w") as file:
         file.write(site_content)
 
-
 @dock()
 def save_site_in_markdown(site_content: str, path: str) -> None:
     """
@@ -115,6 +141,13 @@ def save_site_in_markdown(site_content: str, path: str) -> None:
     with open(path, "w") as file:
         file.write(html2text.html2text(site_content))
 
+def printer(text):
+    """This is a print function that enters text on an alternate screen. """
+    with console.screen():
+        console.print(text)
+        while True:
+            if getkey() == 'q':
+                break
 
 @dock()
 def main() -> None:
@@ -146,7 +179,7 @@ def main() -> None:
             link = ('https://google.com/search?q=' + request.replace(' ', '+'))
             cont, req_get = get_request(link)
             markdown_site = Markdown(print_site(cont, req_get))
-            console.print(markdown_site)
+            printer(markdown_site)
         elif link.lower() == 'wikipedia' or link.lower() == 'w':
             try:
                 request = input('Request: ')
@@ -155,9 +188,9 @@ def main() -> None:
                 wiki_page = wikipedia.page(request)
                 type_text = input('Full text(y/n) ')
                 if type_text.lower() == 'y':
-                    print(wiki_page.content)
+                    printer(wiki_page.content)
                 elif type_text.lower() == 'n':
-                    print(wikipedia.summary(request))
+                    printer(wikipedia.summary(request))
                 print('\nPage URL: ' + wiki_page.url)
             except wikipedia.exceptions.PageError:
                 print('Request page not found')
@@ -176,7 +209,7 @@ def main() -> None:
         else:
             cont, req_get = get_request(link)
             markdown_site = Markdown(print_site(cont, req_get))
-            console.print(markdown_site)
+            printer(markdown_site)
 
 
 if __name__ == "__main__":
