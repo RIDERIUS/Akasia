@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, dev ]
 
 jobs:
   test-all:
@@ -33,3 +33,4 @@ jobs:
           python3 test_akasia.py
       - name: Installing
         run: python setup.py install
+
