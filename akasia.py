@@ -12,7 +12,7 @@ from rich.console import Console
 from rich.markdown import Markdown
 from rich.live import Live
 
-VERSION = '1.8.0-snapshot2'
+VERSION = '1.8.0-snapshot3'
 console = Console()
 
 # pylint settings:
@@ -143,18 +143,16 @@ def save_site_in_markdown(site_content: str, path: str) -> None:
         file.write(html2text.html2text(site_content))
 
 def printer(text) -> int:
-    """This is a print function that enters text on an alternate screen. """
+    """This is a print function that enters text on an live screen. """
     array_text=text.splitlines()
     for i in enumerate(array_text):
         array_text[i[0]]=Markdown(array_text[i[0]])
     with Live(refresh_per_second=4, console=console):
         for i in enumerate(array_text):
-            while True:
-                if getkey() == 'q':
-                    return 0
-                if getkey() == 'n':
-                    console.print(i[1])
-                    break
+            if getkey() == 'q':
+                break
+            if getkey() == 'n':
+                console.print(i[1])
 
 
 @dock()
@@ -215,7 +213,7 @@ def main() -> None:
             save_site_in_markdown(cont, path)
         else:
             cont, req_get = get_request(link)
-            printer(print_site(cont, req_get)) 
+            printer(print_site(cont, req_get))
 
 
 if __name__ == "__main__":
