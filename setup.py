@@ -3,9 +3,10 @@ setup.py is the Akasia setup file.
 '''
 
 from setuptools import setup
+import akasia
 
 setup(
-    version='1.7.1',
+    version=akasia.VERSION,
     license="MIT License",
     name='Akasia',
     author='Robrecht De Rouck',

@@ -12,7 +12,7 @@ from rich.console import Console
 from rich.markdown import Markdown
 from rich.live import Live
 
-VERSION = '1.8.0-snapshot3'
+VERSION = '1.8.0.dev3'
 console = Console()
 
 # pylint settings:
